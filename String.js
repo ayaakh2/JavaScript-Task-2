@@ -108,3 +108,70 @@ let sorted = sor.split("").sort().join("");
 console.log(sorted);
 
 // Question 21
+let st1 = "listen";
+let st2 = "silent";
+if (st1.split("").sort().join("") == st2.split("").sort().join("")) {
+  console.log(true);
+} else {
+  console.log(false);
+}
+
+// Question 22
+function reverseWords(str) {
+  let strReversed = str.split(" ").reverse().join(" ");
+  return strReversed;
+}
+let words = "The quick brown fox";
+console.log(reverseWords(words));
+
+// Question 23
+function longestWord(str) {
+  let arr = str.split(" ");
+  let long = arr[0];
+
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i].length > long.length) {
+      long = arr[i];
+    }
+  }
+  return long;
+}
+let long = "Web development is fascinating";
+console.log(longestWord(long));
+
+// Question 24
+function isPalindrome(str) {
+  let updated = str.toLowerCase().replace(/[^a-z0-9]/g, "");
+  let reversedUpdated = updated.split("").reverse().join("");
+
+  if (updated == reversedUpdated) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+let pal = "A man, a plan, a canal, Panama!";
+console.log(isPalindrome(pal));
+
+// Question 25
+let obj = {};
+let f = "mississippi";
+for (let i = 0; i < f.length; i++) {
+  if (obj[f[i]]) {
+    obj[f[i]]++;
+  } else obj[f[i]] = 1;
+}
+console.log(obj);
+
+// Question 26
+let vowels = { a: 1, e: 2, i: 3, o: 4, u: 5 };
+let v = "Hello World";
+v = v.split("");
+for (let i = 0; i < v.length; i++) {
+  if (vowels[v[i]]) {
+    v[i] = v[i].replace(v[i], vowels[v[i]]);
+  }
+}
+v = v.join("");
+console.log(v);
